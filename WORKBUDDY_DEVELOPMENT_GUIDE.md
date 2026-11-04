@@ -137,6 +137,9 @@ tags:
 ```
 
 ### 2. `.codebuddy-plugin/plugin.json` 规范模板（必须包含全部字段）
+
+> ⚠️ **平台强校验红线**：`defaultInitPrompt.zh` **必须与** `quickPrompts[0].zh` 完全一致；`defaultInitPrompt.en` **必须与** `quickPrompts[0].en` 完全一致！否则平台后台解包时直接报错拦截（“解析失败：defaultInitPrompt.zh 必须与 quickPrompts[0].zh 一致”）。
+
 ```json
 {
   "name": "your-expert-name",
@@ -151,7 +154,7 @@ tags:
   "displayDescription": { "en": "One-line EN intro.", "zh": "一句话中文简介。" },
   "avatar": "avatars/expert.jpg",
   "categoryId": "11-SecurityCompliance",
-  "defaultInitPrompt": { "zh": "默认开场提问", "en": "Default init prompt" },
+  "defaultInitPrompt": { "zh": "快捷提问一", "en": "Quick prompt 1 EN" },
   "plugin": "your-expert-name",
   "tags": [
     { "en": "Tag 1 EN", "zh": "标签一" },

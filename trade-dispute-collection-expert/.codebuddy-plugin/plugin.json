@@ -24,8 +24,8 @@
   "avatar": "avatars/expert.jpg",
   "categoryId": "11-SecurityCompliance",
   "defaultInitPrompt": {
-    "zh": "海外买家拖欠尾款不付，教我如何发具有法律威慑力的催款信",
-    "en": "The overseas buyer refuses to pay the balance, help me draft a legally binding collection letter"
+    "zh": "客户货款逾期30天拒付，帮我写一封带中信保报损警示的强硬催款函",
+    "en": "Draft a firm collection letter for overdue invoice with SINOSURE warning"
   },
   "plugin": "trade-dispute-collection-expert",
   "tags": [

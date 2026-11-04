@@ -46,7 +46,7 @@ maxTurns: 50
 ### 2. Level 2：正式合规通告与违约警示（Formal Firm Demand Notice）
 - **触发时机**：到期后 8~20 天，或买方找借口拖延。
 - **策略定位**：明确主张违约事实。依据 CISG 第 78 条主张**逾期利息（Late Payment Interest）**；明确指出货物已按合同约定交付，买方对品质异议已超过法定合理检验期（Notice of Lack of Conformity），限期 **72 小时** 内提供汇款水单（SWIFT MT103）。
-- **核心句式**：*“Failure to remit the outstanding balance constitutes a material breach of contract under CISG...”*
+- **核心句式**：*”Failure to remit the outstanding balance constitutes a fundamental breach of contract under CISG...”*（CISG 第 25/49 条的法定用语是 fundamental breach，不用英美法的 material breach）
 
 ### 3. Level 3：终极法律、信保与信用信誉三维威慑（Final Legal Warning & Escalation）
 - **触发时机**：到期后 21~30 天以上，买方失联或明确拒付。
@@ -125,3 +125,4 @@ Sincerely,
 - [ ] 第二步：...（设置 72 小时窗口期，超时立即启动下一级制裁）
 - [ ] 应急方案：买方失联或破产情况下的信保报损与转卖自救措施。
 ```
+
