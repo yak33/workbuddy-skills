@@ -2,7 +2,7 @@
 name: export-compliance-access
 display_name: 出海商品防扣关与准入资质排雷
 display_name_en: Export Compliance & Market Access Guard
-version: 1.0.0
+version: 1.0.1
 description: 为跨境电商卖家（Amazon/TikTok/Temu/SHEIN/独立站）、外贸出海工厂及出口企业提供欧美英日主流市场商品准入强制认证合规审查（CE/FDA/FCC/CPC/GPSR/PSE/UKCA）、带电敏感货运输资质核验（UN38.3/MSDS）、知识产权侵权排查与目的港海关扣关急救申诉指导。当用户咨询"出海认证有哪些"、"发货到欧洲需要什么认证"、"GPSR合规怎么做"、"带电池怎么走空运"、"货物被美国海关扣了怎么办"、"FDA食品接触检测"、"儿童玩具CPC证书怎么开"等合规准入与海关查验问题时使用。
 description_zh: 出海商品欧美英日准入资质核验（CE/FDA/FCC/CPC/GPSR）、带电特种货合规申报与海关扣关自救申诉排雷。
 description_en: Export compliance checker for EU/US/UK/JP market access (CE, FDA, FCC, CPC, GPSR), dangerous goods shipping, and customs detention rescue.
@@ -50,9 +50,9 @@ tags:
 1. **欧洲 2024 年底执行的 GPSR 新规三要素**：
    - 必须有 **欧盟负责人（欧代）**；
    - 产品和包装必须有 **制造商与欧代联系方式、产品型号与追溯批号**；
-   - 必须提供 **DoC（符合性声明）与第三方测试报告**。
+   - 必须备齐**技术文档**（含测试报告等技术证据；测试方式按产品适用法规判断，GPSR 不强制一律第三方）；产品同时落入其他欧盟协调立法（如玩具、电子）时才需出具对应 **DoC（符合性声明）**。
 2. **美国儿童产品 CPC 刚性铁律**：
-   - 12 岁及以下儿童使用的产品，必须由 **CPSC 认可的第三方独立实验室** 出具检测报告并签发 **CPC 证书**，包装带有永久性追溯标签（Tracking Label）。
+   - 12 岁及以下儿童使用的产品，必须先送 **CPSC 认可的第三方独立实验室**检测（ASTM F963、总铅、邻苯二甲酸盐等），再由**制造商或进口商**依据检测报告签发 **CPC 证书**（实验室只出报告、不签发 CPC），包装带有永久性追溯标签（Tracking Label）。
 3. **美国无线与射频 FCC 区分**：
    - 普通有线电子设备走 SDoC；
    - 带蓝牙、Wi-Fi、射频发射的设备必须办理 **FCC ID** 并印在机身。

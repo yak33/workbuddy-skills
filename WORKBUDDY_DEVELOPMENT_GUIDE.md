@@ -26,7 +26,7 @@
 | **Skill 标杆** | `d:\ChaoProjects\MySkills\cross-border-parcel-customs\` | 最标准的 Skill 结构、完整 YAML 前置元数据、分档知识库结构 |
 | **Skill 标杆** | `d:\ChaoProjects\MySkills\incoterms-quote-advisor\` | 深度公式模型、11种术语矩阵、货代抗辩 SOP |
 | **Skill 标杆** | `d:\ChaoProjects\MySkills\export-compliance-access\` | 全球认证准入合规（CE/FDA/GPSR）、带电特种货与海关申诉自救 |
-| **Expert 标杆** | `d:\ChaoProjects\MySkills\customs-classification-expert\` | 标准 Expert 结构，多子 Agent 协同，通过官方 `validate_expert.py` 验证 |
+| **Expert 标杆** | `d:\ChaoProjects\MySkills\customs-classification-expert\` | 标准 Expert 结构：`.codebuddy-plugin/plugin.json` 元数据 + `agents/` 人设 Prompt + `avatars/` 头像（单 Agent 型） |
 
 ---
 
@@ -122,43 +122,52 @@ tags:
 
 ## 五、 专家（Expert）标准开发规范与模板
 
+> ⚠️ **专家格式与 Skill 不同**：专家元数据放在 `.codebuddy-plugin/plugin.json`（JSON 格式），**不是**根目录 `EXPERT.md`。以 `customs-classification-expert` 的实际结构为唯一基准。
+
 ### 1. 标准目录结构
 ```text
 <expert-name>/
-├── EXPERT.md                         # 专家主元数据与总控协调 Prompt
-├── avatar.png                        # 专家头像 (512x512, <= 500KB)
-├── README.md                         # 专家产品介绍
-├── agents/                           # 专业子 Agent 协作指令
-│   ├── sub-agent-1.md
-│   └── sub-agent-2.md
-└── references/                       # 核心法规、决策矩阵与专业知识库
-    └── expert-reference.md
+├── .codebuddy-plugin/
+│   └── plugin.json                   # 专家核心元数据（展示名、分类、头像、标签、快捷提问）
+├── agents/
+│   └── <expert-name>.md              # 专家人设 Prompt（YAML frontmatter + 系统提示词正文）
+├── avatars/
+│   └── expert.jpg                    # 专家头像 (512x512, <= 500KB, PNG 或 JPG)
+└── README.md                         # 专家产品介绍
 ```
 
-### 2. `EXPERT.md` 规范模板
-```markdown
-# 专家中文全称 (Expert English Title)
-
-## Metadata
-- **Name**: your-expert-name
-- **Role**: 专家的专业角色定位
-- **Category**: 11-SecurityCompliance (按官方分类)
-- **Version**: 1.0.0
-- **Author**: 超儿哥哥
-
-## Description
-针对……场景打造的高阶专业专家，具备……核心能力闭环。
-
-## System Prompt
-你是由超儿哥哥打造的【专家中文全称】……
-
-## Sub-Agents Collaboration
-1. **子代理 1** (`agents/agent1.md`)：负责……
-2. **子代理 2** (`agents/agent2.md`)：负责……
-
-## Output Format
-……
+### 2. `.codebuddy-plugin/plugin.json` 规范模板（必须包含全部字段）
+```json
+{
+  "name": "your-expert-name",
+  "version": "1.0.0",
+  "description": "English summary of the expert's capabilities.",
+  "author": { "name": "超儿哥哥", "email": "your@email.com" },
+  "agents": ["./agents/your-expert-name.md"],
+  "expertType": "agent",
+  "agentName": "your-expert-name",
+  "displayName": { "en": "Expert English Title", "zh": "专家中文名" },
+  "profession": { "en": "Profession EN", "zh": "职业定位中文" },
+  "displayDescription": { "en": "One-line EN intro.", "zh": "一句话中文简介。" },
+  "avatar": "avatars/expert.jpg",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": { "zh": "默认开场提问", "en": "Default init prompt" },
+  "plugin": "your-expert-name",
+  "tags": [
+    { "en": "Tag 1 EN", "zh": "标签一" },
+    { "en": "Tag 2 EN", "zh": "标签二" },
+    { "en": "Tag 3 EN", "zh": "标签三" }
+  ],
+  "quickPrompts": [
+    { "en": "Quick prompt 1 EN", "zh": "快捷提问一" },
+    { "en": "Quick prompt 2 EN", "zh": "快捷提问二" },
+    { "en": "Quick prompt 3 EN", "zh": "快捷提问三" }
+  ]
+}
 ```
+
+### 3. `agents/<expert-name>.md` 规范
+文件头为 YAML frontmatter，包含 `name`、`description`（英文路由描述）、`displayName`（en/zh）、`profession`（en/zh）、`maxTurns`；正文即专家系统提示词（人设定位、方法论、SOP、结构化交付模板）。
 
 ---
 
@@ -189,7 +198,8 @@ $img.Dispose()
 Compress-Archive -Path "d:\ChaoProjects\MySkills\<项目名>\*" -DestinationPath "d:\ChaoProjects\MySkills\<项目名>.zip" -Force
 
 # 验证压缩包内第一层结构（必须直接看到 SKILL.md/logo.png）：
-tar -tf "d:\ChaoProjects\MySkills\<项目名>.zip"
+# 注意：需使用 Windows 系统 bsdtar；Git Bash 内置 GNU tar 会把 "D:" 当主机名且不识别 zip 格式
+C:\Windows\System32\tar.exe -tf "d:\ChaoProjects\MySkills\<项目名>.zip"
 ```
 
 ---
@@ -198,7 +208,7 @@ tar -tf "d:\ChaoProjects\MySkills\<项目名>.zip"
 
 在声称完成任务并向用户回复前，必须逐项核对：
 - [ ] 目录创建在 `d:\ChaoProjects\MySkills\<kebab-case-name>` 下。
-- [ ] `SKILL.md` 或 `EXPERT.md` 的 YAML 前置元数据字段完整无缺失。
+- [ ] `SKILL.md` 的 YAML 前置元数据字段完整无缺失；专家包的 `.codebuddy-plugin/plugin.json` 字段完整（name/version/displayName/profession/displayDescription/avatar/categoryId/tags/quickPrompts 等）。
 - [ ] `references/` 目录下有扎实、专业的 Markdown 知识库，禁止使用假大空的套话。
 - [ ] 图标已放置于目录根下，且文件大小严格 `<= 500 KB`。
 - [ ] `.zip` 压缩包已生成，且经 `tar -tf` 校验内部无多余父层目录。

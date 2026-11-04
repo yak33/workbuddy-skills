@@ -1,6 +1,6 @@
 {
   "name": "customs-classification-expert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Senior customs HS classification and tariff planning expert with 15+ years of practical foreign trade experience. Specializes in 10-digit HS code determination, declaration element optimization, RCEP/FTA preferential tariff reduction, and customs inspection dispute defense.",
   "author": {
     "name": "ZHANGCHAO",
@@ -23,7 +23,7 @@
     "en": "15+ years in foreign trade compliance; specializes in 10-digit HS code classification, GIR rules, RCEP preferential tariffs, and customs inspection defense.",
     "zh": "十五年关务实战经验，专精商品海关精准归类与申报要素规范，深谙RCEP等协定关税筹划及查验合规抗辩。"
   },
-  "avatar": "avatars/expert.png",
+  "avatar": "avatars/expert.jpg",
   "categoryId": "11-SecurityCompliance",
   "defaultInitPrompt": {
     "zh": "帮我判定这款出口产品的 10 位 HS 编码及申报要素",

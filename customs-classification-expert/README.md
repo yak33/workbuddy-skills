@@ -47,7 +47,7 @@ customs-classification-expert/
 ├── agents/
 │   └── customs-classification-expert.md # 专家人设核心 Prompt（GIR方法论、申报规范、SOP）
 ├── avatars/
-│   ├── expert.jpg                      # 专家高清头像（512×512，~50KB）
-│   └── expert.png                      # 备用头像
+│   ├── expert.jpg                      # 专家头像（512×512，~50KB，plugin.json 引用此文件）
+│   └── expert.png                      # 备用头像（约 520KB，超过平台上限 500KB，勿直接引用）
 └── README.md                           # 专家说明文档
 ```
