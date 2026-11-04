@@ -2,12 +2,12 @@
 name: no-bs-review
 display_name: 不废话代码审查
 display_name_en: No-BS Code Review
-version: 1.0.0
+version: 1.1.0
 description: 按务实而严格的工程规范进行代码质量审查与合并前把关：红线无条件必改、黄线讲清理由、坚决反过度设计、项目既有惯例优先。当用户提到"代码审查"、"review"、"CR"、"帮我看看这段代码"、"检查下代码"、"合并前把关"、"代码质量评估"，或贴出、指向任何业务代码并要求评估质量时使用——即使用户没有说出"审查"两个字。输出按严重程度分级的问题清单。只评估不改动代码，除非用户明确要求修复。不用于开发新功能，不用于执行重构。
-description_zh: 按务实而严格的工程规范进行代码质量审查与合并前把关：红线无条件必改、黄线讲清理由、坚决反过度设计、项目既有惯例优先。当用户提到"代码审查"、"review"、"CR"、"帮我看看这段代码"、"检查下代码"、"合并前把关"，或贴出代码要求评估质量时使用。只输出评估意见不修改代码，不用于开发新功能或执行重构。
+description_zh: 务实严格的合并前代码审查：红线无条件必改、黄线讲清理由、反过度设计、项目惯例优先，只评不改。
 description_en: Pragmatic and strict engineering code review for general codebases. Enforces redlines unconditionally, explains rationale for yellow lines, opposes over-engineering, and prioritizes project conventions. Outputs a tiered issue list. Does not modify code or implement new features.
-category: coding
-author: ZHANGCHAO
+category: code
+author: 超儿哥哥
 examples_zh:
   - "做下合并前代码审查，按红线与黄线列出必须修复项"
   - "帮我CR这段核心业务代码，检查有没有过度设计和并发风险"
@@ -27,7 +27,7 @@ tags:
 
 # 不废话代码审查（No-BS Review）
 
-> 版本：1.0 · 2026/10/24
+> 版本：1.1 · 2026/11/04
 
 ## 这个技能做什么
 
@@ -54,7 +54,7 @@ tags:
 | 检查项 | 判据 |
 | --- | --- |
 | 嵌套层级 | if / for / try 嵌套超过 3 层 |
-| Lambda 嵌套 | Lambda 内再嵌 Lambda，一律禁止 |
+| 匿名函数嵌套 | 匿名函数/闭包（含 Lambda）内再嵌匿名函数，一律禁止 |
 | 嵌套三元 | 三元表达式套三元，一律禁止 |
 | 第三方依赖 | 存量项目普通需求中无理由新增；或有理由但未说明安全风险、许可证、版本兼容影响 |
 | 正确性缺陷 | 边界没覆盖、异常路径丢失、并发隐患、明显逻辑错误 |
@@ -67,7 +67,7 @@ tags:
 | 单个方法 | ~60 行 |
 | 单个文件（仅新建） | ~400 行 |
 | 链式调用 | ~5 环，且每环表达式不超过一行 |
-| Lambda 函数体 | ~3 行 |
+| 匿名函数 / 闭包函数体 | ~3 行 |
 | 泛型嵌套 | 2 层（如 `Map<String, List<Foo>>`） |
 
 黄线触发后的唯一动作：让作者回到"3 句话自检"——能否用 3 句中文说清这段代码的执行流程？说得清就保持原样；说不清才建议拆分。
@@ -96,7 +96,7 @@ tags:
 - Java → 深入参考 [references/java-review.md](./references/java-review.md)（Stream 单环复杂度 / Optional 规范 / 异常与日志保留现场）
 - TypeScript / Vue → 深入参考 [references/frontend-review.md](./references/frontend-review.md)（类型复杂度判据 / Vue 3 组件规范 / 前端大列表与内存泄漏）
 - 后端服务与数据层 → 必读 [references/security-performance.md](./references/security-performance.md)（注入、越权、并发及 N+1 查询等安全与性能陷阱）
-- Python / Go / Rust 等其他语言 → 严格执行前三遍原则及安全清单；语言特有语法遵从该语言生态主流规范
+- Python / Go / Rust 等其他语言 → 严格执行前三遍原则，并必读 [references/security-performance.md](./references/security-performance.md)（安全清单对所有语言生效）；语言特有语法遵从该语言生态主流规范
 
 ## 输出格式（固定模板）
 
