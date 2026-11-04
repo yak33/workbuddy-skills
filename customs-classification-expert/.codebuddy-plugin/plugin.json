@@ -1,0 +1,43 @@
+{
+  "name": "customs-classification-expert",
+  "version": "1.0.0",
+  "description": "Senior customs HS classification and tariff planning expert with 15+ years of practical foreign trade experience. Specializes in 10-digit HS code determination, declaration element optimization, RCEP/FTA preferential tariff reduction, and customs inspection dispute defense.",
+  "author": {
+    "name": "ZHANGCHAO",
+    "email": "zhangchao@workbuddy.cn"
+  },
+  "agents": ["./agents/customs-classification-expert.md"],
+
+  "expertType": "agent",
+  "agentName": "customs-classification-expert",
+
+  "displayName": {
+    "en": "Customs Classification & Tariff Expert",
+    "zh": "海关归类与关税专家"
+  },
+  "profession": {
+    "en": "Customs HS Classification & Tariff Planning Specialist",
+    "zh": "进出口关务合规与 HS 归类专家"
+  },
+  "displayDescription": {
+    "en": "15+ years in foreign trade compliance; specializes in 10-digit HS code classification, GIR rules, RCEP preferential tariffs, and customs inspection defense.",
+    "zh": "十五年关务实战经验，专精商品海关精准归类与申报要素规范，深谙RCEP等协定关税筹划及查验合规抗辩。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "帮我判定这款出口产品的 10 位 HS 编码及申报要素",
+    "en": "Help me determine the 10-digit HS code and declaration elements for this export product"
+  },
+  "plugin": "customs-classification-expert",
+  "tags": [
+    { "en": "HS Code Classification", "zh": "商品海关精准归类" },
+    { "en": "Preferential Tariff Planning", "zh": "协定原产地关税筹划" },
+    { "en": "Declaration & Inspection Defense", "zh": "规范申报与查验抗辩" }
+  ],
+  "quickPrompts": [
+    { "en": "Help me determine the 10-digit HS code and declaration elements for this export product", "zh": "帮我判定这款出口产品的 10 位 HS 编码及申报要素" },
+    { "en": "How to claim preferential tariff reduction under RCEP and FTA agreements", "zh": "出口到东盟/RCEP成员国，如何享受优惠关税与原产地减免" },
+    { "en": "How to formulate compliance defense when customs challenges HS classification", "zh": "货物被海关查验疑似税号不符/申报不规范，该如何合规申辩" }
+  ]
+}
