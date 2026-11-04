@@ -11,6 +11,8 @@
 |---|---|---|---|
 | **Skill** | **不废话代码审查**<br>`no-bs-review` | [`no-bs-review/`](./no-bs-review/) | 拒绝教条主义与过度设计，按红线零容忍、黄线讲清理由的工业级规范把关合并前代码质量。跨语言通用底座，按需挂载 Java/前端专项深度。 |
 | **Expert** | **海关归类与关税专家**<br>`customs-classification-expert` | [`customs-classification-expert/`](./customs-classification-expert/) | 十五年关务实战经验，专精 10 位 HS 编码 GIR 1-6 推导、规范申报要素提炼、RCEP 优惠关税筹划及海关查验合规抗辩。 |
+| **Skill** | **出口退税精算与跨境财税合规**<br>`export-tax-rebate-advisor` | [`export-tax-rebate-advisor/`](./export-tax-rebate-advisor/) | 外贸免退税与工厂免抵退倒轧、0110/1039/9610/9810跨境监管财税合规筹划、单证备案防骗税排雷及逾期收汇自救。 |
+| **Expert** | **外贸催款与提单信用证风控专家**<br>`trade-dispute-collection-expert` | [`trade-dispute-collection-expert/`](./trade-dispute-collection-expert/) | 基于 CISG 与 UCP600，提供海外买家欠款阶梯催收、海运提单防无单放货预警与信用证软条款拒付反驳。 |
 | **Skill** | **跨境个人包裹邮税与清关指引**<br>`cross-border-parcel-customs` | [`cross-border-parcel-customs/`](./cross-border-parcel-customs/) | 聚焦海关总署最新进境包裹限值与行邮税则，提供应税额精准核算、退运/商业报关红线判别及海淘被税自救指南。 |
 | **Skill** | **出海商品合规准入与海关查验申诉**<br>`export-compliance-access` | [`export-compliance-access/`](./export-compliance-access/) | 覆盖欧美主流市场准入认证（CE/FCC/FDA/GPSR/CPC）、带电带磁特种货合规、海关扣关查验实战申诉 SOP。 |
 | **Skill** | **国际贸易术语与跨境物流报价顾问**<br>`incoterms-quote-advisor` | [`incoterms-quote-advisor/`](./incoterms-quote-advisor/) | 深度解析 Incoterms 2020 规则，提供 11 种贸易术语权责矩阵、综合到岸价全链路精算模型与货代虚高附加费抗辩。 |
@@ -22,15 +24,17 @@
 ```text
 MySkills/
 ├── no-bs-review/                     # [Skill] 不废话代码审查
-│   ├── SKILL.md                      # 技能定义与四步审查流
-│   ├── README.md                     # 使用说明与触发词
-│   ├── logo.png                      # 技能图标
-│   └── references/                   # 专项深度规则库 (Java/前端/安全性能)
 ├── customs-classification-expert/    # [Expert] 海关归类与关税专家
-│   ├── .codebuddy-plugin/            # 专家插件元数据配置 (plugin.json)
-│   ├── agents/                       # 核心 Prompt (GIR方法论/SOP)
-│   ├── avatars/                      # 专家头像资源
-│   └── README.md                     # 专家说明文档
+├── export-tax-rebate-advisor/        # [Skill] 出口退税精算与跨境财税合规
+│   ├── SKILL.md                      # 技能核心指令与算税流程
+│   ├── README.md                     # 使用说明与触发词
+│   ├── logo.png                      # 技能图标（512x512，22KB）
+│   └── references/                   # 退税精算SOP、监管模式矩阵与单证排雷
+├── trade-dispute-collection-expert/  # [Expert] 外贸催款与提单信用证风控专家
+│   ├── .codebuddy-plugin/            # 专家核心元数据 (plugin.json)
+│   ├── agents/                       # 核心 Prompt (阶梯催收/提单风控/UCP600)
+│   ├── avatars/                      # 专家头像资源（512x512，32KB，JPG）
+│   └── README.md                     # 专家产品介绍
 ├── cross-border-parcel-customs/      # [Skill] 跨境个人包裹邮税与清关
 ├── export-compliance-access/         # [Skill] 出海商品合规准入与海关查验
 ├── incoterms-quote-advisor/          # [Skill] 国际贸易术语与物流报价

@@ -1,0 +1,41 @@
+{
+  "name": "trade-dispute-collection-expert",
+  "version": "1.0.0",
+  "description": "Cross-border trade law and debt collection expert with 15+ years of practical experience. Specializes in overseas overdue debt recovery, CISG contract dispute defense, bill of lading risk control, and L/C discrepancy settlement.",
+  "author": {
+    "name": "超儿哥哥",
+    "email": "zhangchao@workbuddy.cn"
+  },
+  "agents": ["./agents/trade-dispute-collection-expert.md"],
+  "expertType": "agent",
+  "agentName": "trade-dispute-collection-expert",
+  "displayName": {
+    "en": "Trade Dispute & Debt Collection Expert",
+    "zh": "外贸催款与提单信用证风控专家"
+  },
+  "profession": {
+    "en": "Cross-Border Trade Law & Payment Recovery Specialist",
+    "zh": "国际贸易法务风控与催款谈判顾问"
+  },
+  "displayDescription": {
+    "en": "Specializes in overseas overdue payment recovery, CISG contract dispute defense, bill of lading risk control, and L/C discrepancy settlement.",
+    "zh": "十五年涉外贸易风控实战，专精海外买家拖欠货款阶梯催收、海运提单无单放货防范与信用证软条款排雷抗辩。"
+  },
+  "avatar": "avatars/expert.jpg",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "海外买家拖欠尾款不付，教我如何发具有法律威慑力的催款信",
+    "en": "The overseas buyer refuses to pay the balance, help me draft a legally binding collection letter"
+  },
+  "plugin": "trade-dispute-collection-expert",
+  "tags": [
+    { "en": "Debt Collection", "zh": "海外账期阶梯催收" },
+    { "en": "B/L Risk Control", "zh": "海运提单防无单放货" },
+    { "en": "L/C Discrepancy", "zh": "信用证软条款与拒付抗辩" }
+  ],
+  "quickPrompts": [
+    { "en": "Draft a firm collection letter for overdue invoice with SINOSURE warning", "zh": "客户货款逾期30天拒付，帮我写一封带中信保报损警示的强硬催款函" },
+    { "en": "FOB buyer nominated forwarder released cargo without B/L, how to claim", "zh": "FOB客户指定货代在未收回正本提单情况下私自放货，该如何索赔维权" },
+    { "en": "How to resolve bank discrepancy notification under UCP600 L/C", "zh": "收到开证行信用证不符点拒付通知，如何依据UCP600组织法理反驳" }
+  ]
+}
